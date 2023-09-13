@@ -15,7 +15,7 @@ Before you begin, make sure you have the following software installed on your ma
 
 First, clone this repository to your local machine using the following command:
 
-git clone https://github.com/your-username/FoodApp.git
+git clone https://github.com/WebGeek101/FoodApp.git
 
 ## Running the BackEnd (FoodApp_BE)
 

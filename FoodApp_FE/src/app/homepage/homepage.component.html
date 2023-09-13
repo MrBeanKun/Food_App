@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="bg-dark">
+    <div class="container d-flex flex-column justify-content-md-center align-items-center" style="height: 90vh;">
+      <h1 class="text-white mb-4" style="margin-top: -90px;">Welcome to <span class="text-white">Clariv</span
+        ><span class="text-success">Ate</span></h1>
+      <p class="text-white mb-4">Your ultimate culinary companion!</p>
+      <div class="btn-group" role="group" aria-label="Account Buttons">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          style="color: white; font-size: x-large"
+          (click)="checkIfLogin()"
+        >
+          Already Have an Account?
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          style="color: white; font-size: x-large"
+          routerLink="register"
+        >
+          Wish to Create an Account?
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

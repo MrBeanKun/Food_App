@@ -1,0 +1,119 @@
+<div class="registerPage" style="
+    width: 100%;
+    background: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: rgb(0, 0, 0);
+  ">
+
+  <div>
+    <div class="profile-icon" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      style="position: absolute; top: 20px; right: 20px; cursor: pointer">
+      <div class="col-md-11">
+        <img src="https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=Aneka" alt="avatar"
+          class="img-fluid rounded-circle object-fit-lg-cover" style="width: 50px; height: 50px" />
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-bg-dark">
+            <p>{{ staff.name }}</p>
+            <p>{{ staff.email }}</p>
+            <button class="btn btn-danger" data-bs-dismiss="modal" (click)="logout()">
+              Logout
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+  </div>
+  <div class="container">
+    <div class="orders">
+      <button type="button" class="btn btn-dark" [routerLink]="['/create-order']"
+        style="font-size: medium; margin-top: 40px;  position: relative; left: -580px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+        </svg>
+        Create Order
+      </button>
+      <br /><br />
+
+      <h4 *ngIf="!flag">
+        No orders found, Create Some!
+      </h4>
+
+      <div *ngFor="let fo of allOrders.data | filter: searchOrder">
+        <div class="card" style="cursor: pointer; margin-bottom: 5px;">
+          <div class="card-header" data-bs-toggle="collapse" [attr.data-bs-target]="'#orderDetails_' + fo.id">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title">Order ID: {{ fo.id }}</h5>
+              </div>
+              <div class="col-auto">
+                <div class="btn">
+                  <select class="form-control" id="inputSelect" name="status" [(ngModel)]="fo.status"
+                    (ngModelChange)="changeStatus($event, fo.id)" [disabled]="fo.status === delivered">
+                    <option value="confirmed">Confirmed</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="process">In Process</option>
+                  </select>
+                </div>
+                &nbsp;
+                <button class="btn btn-info" style="width: 100px" [routerLink]="['/edit-order/', fo.id]" [disabled]="fo.status === 'delivered'">
+                  Edit
+                </button>
+                &nbsp;
+                <button class="btn btn-danger" style="width: 100px" (click)="deleteFoodOrder(fo.id)">
+                  Delete
+                </button>
+              </div>
+            </div>
+          
+          </div>
+          <div [id]="'orderDetails_' + fo.id" class="collapse">
+            <div class="card-body" style="color: rgb(19, 19, 19)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor"
+                class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
+              </svg>
+              <br><br>
+              <h6>Name of the Customer: {{ fo.customerName }}</h6>
+              <h6>Contact Number: {{ fo.contactNumber }}</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Total Amount of the Order: {{ fo.totalPrice }}
+              </li>
+              <li class="list-group-item">
+                Created At: {{ fo.orderCreatedTime }}
+              </li>
+              <li class="list-group-item">
+                Delivered At: {{ fo.orderDeliveryTime }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -19,17 +19,17 @@
             <h6  class="text-center text-muted p-md-2"> Food Product Details</h6>
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" placeholder="Enter the name of the Food Product" id="name" name="name" #name="ngModel" ngModel required>
-              <div *ngIf="name.touched && name.invalid" class="text-danger">Kindly fill out this field</div>
+              <div *ngIf="name.touched && name.invalid" class="text-danger">Kindly Fill Out This Field</div>
           </div>
           <div class="mb-3">
               <label for="type" class="form-label">Type</label>
               <input type="text" placeholder="Enter the type of the Food Product" class="form-control" id="type" name="type" #type="ngModel" ngModel required>
-              <div *ngIf="type.touched && type.invalid" class="text-danger">Kindly fill out this field</div>
+              <div *ngIf="type.touched && type.invalid" class="text-danger">Kindly Fill Out This Field</div>
           </div>
           <div class="mb-3">
               <label for="about" class="form-label">About</label>
               <input type="text" placeholder="Enter About the Food Product" class="form-control" id="about" name="about" #about="ngModel" ngModel required>
-              <div *ngIf="about.touched && about.invalid" class="text-danger">Kindly fill out this field</div>
+              <div *ngIf="about.touched && about.invalid" class="text-danger">Kindly Fill Out This Field</div>
           </div>
           <div class="mb-3">
               <div class="form-check">
@@ -40,7 +40,7 @@
           <div class="mb-3">
               <label for="price" class="form-label">Price</label>
               <input type="number" class="form-control" placeholder="Enter the price of the Food Product" id="price" name="price" #price="ngModel" ngModel required>
-              <div *ngIf="price.touched && price.invalid" class="text-danger">Kindly fill out this field</div>
+              <div *ngIf="price.touched && price.invalid" class="text-danger">Kindly Fill Out This Field</div>
           </div>
           <div class="text-center">
               <button [disabled]="!regForm.valid" type="submit" class="btn btn-success btn-lg" style="width: 100%;">Add the Food Product</button>

@@ -65,7 +65,7 @@
           <div class="card-header" data-bs-toggle="collapse" [attr.data-bs-target]="'#orderDetails_' + fo.id">
             <div class="row">
               <div class="col">
-                <h5 class="card-title">Order ID: {{ fo.id }}</h5>
+                <h5 class="card-body">Order ID: {{ fo.id }}</h5>
               </div>
               <div class="col-auto">
                 <div class="btn">
@@ -104,11 +104,13 @@
                 Total Amount of the Order: {{ fo.totalPrice }}
               </li>
               <li class="list-group-item">
-                Created At: {{ fo.orderCreatedTime }}
+                Created Date: {{ fo.orderCreatedTime | date:'mediumDate' }} {{ fo.orderCreatedTime | date:'shortTime' }}
               </li>
+              
               <li class="list-group-item">
-                Delivered At: {{ fo.orderDeliveryTime }}
-              </li>
+                Delivered At: {{ fo.orderDeliveryTime | date:'mediumDate' }} {{ fo.orderDeliveryTime | date:'shortTime' }}
+            </li>
+            
             </ul>
           </div>
         </div>

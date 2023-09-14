@@ -18,6 +18,7 @@ import { MangStaffComponent } from './mang-staff/mang-staff.component';
 import { AddStaffComponent } from './add-staff/add-staff.component';
 import { EditStaffComponent } from './edit-staff/edit-staff.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [

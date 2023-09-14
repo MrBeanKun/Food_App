@@ -76,12 +76,13 @@
                     class="form-control"
                     id="inputPassword"
                     placeholder="Enter your password here"
+                    pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})"
                     required
                   />
                   <span
                     *ngIf="password.invalid && password.touched"
                     style="color: red"
-                    >Password required</span
+                    >Try again. Your password must contain atleast one lowercase alphabet, one uppercase alphabet, one digit and one special chaarcter!!</span
                   >
                 </div>
 

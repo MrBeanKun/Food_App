@@ -9,6 +9,7 @@ import { ManagerServiceService } from '../Services/manager-service.service';
   styleUrls: ['./edit-fp.component.css'],
 })
 export class EditFpComponent implements OnInit {
+ 
   result: any;
   res: any;
   selectedProduct: any;

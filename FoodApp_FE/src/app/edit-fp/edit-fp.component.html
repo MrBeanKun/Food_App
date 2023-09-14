@@ -39,23 +39,26 @@
                   <span *ngIf="name.touched && name.invalid" style="color: red"
                     >Kindly fill out this field</span
                   >
+                </div>
+                  <div class="mb-3">
+                    <label for="type" class="form-label">Type</label>
+                    <select
+                      id="type"
+                      class="form-control"
+                      name="type"
+                      #type="ngModel"
+                      [(ngModel)]="selectedProduct.type"
+                      required
+                    >
+                      <option value="Veg">Veg</option>
+                      <option value="Non-Veg">Non-Veg</option>
+                    </select>
+                    <span *ngIf="type.touched && type.invalid" style="color: red"
+                      >Kindly fill out this field</span
+                    >
+                  </div>
                   
-                </div>
-                <div class="mb-3">
-                  <label for="type" class="form-label">Type </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="type"
-                    name="type"
-                    #type="ngModel"
-                    [(ngModel)]="selectedProduct.type"
-                    required
-                  />
-                  <span *ngIf="type.touched && type.invalid" style="color: red"
-                    >Kindly fill out this field</span
-                  >
-                </div>
+
                 <div class="mb-3">
                   <label for="about" class="form-label">About </label>
                   <input

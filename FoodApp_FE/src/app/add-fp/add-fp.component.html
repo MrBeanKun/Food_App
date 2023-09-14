@@ -22,10 +22,14 @@
               <div *ngIf="name.touched && name.invalid" class="text-danger">Kindly fill out this field</div>
           </div>
           <div class="mb-3">
-              <label for="type" class="form-label">Type</label>
-              <input type="text" placeholder="Enter the type of the Food Product" class="form-control" id="type" name="type" #type="ngModel" ngModel required>
-              <div *ngIf="type.touched && type.invalid" class="text-danger">Kindly fill out this field</div>
+            <label for="type" class="form-label">Type</label>
+            <select class="form-select" id="type" name="type" #type="ngModel" [(ngModel)]="selectedType" required>
+              <option value="Veg">Veg</option>
+              <option value="Non-Veg">Non-Veg</option>
+            </select>
+            <div *ngIf="type.touched && type.invalid" class="text-danger">Kindly fill out this field</div>
           </div>
+          
           <div class="mb-3">
               <label for="about" class="form-label">About</label>
               <input type="text" placeholder="Enter About the Food Product" class="form-control" id="about" name="about" #about="ngModel" ngModel required>

@@ -10,6 +10,7 @@ import { ManagerServiceService } from '../Services/manager-service.service';
 })
 export class AddFpComponent implements OnInit {
 
+  selectedType:string="Veg";
   res:any
   manager = JSON.parse(localStorage.getItem("user")!);
   menu_id = JSON.parse(localStorage.getItem("my_menu")!);

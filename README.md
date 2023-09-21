@@ -1,4 +1,4 @@
-# FrontEnd Deployed URL
+# FoodApp FrontEnd Deployed URL
 [FoodApp](https://foodapp-frontend.vercel.app/)
 
 # FoodApp - Installation Steps 

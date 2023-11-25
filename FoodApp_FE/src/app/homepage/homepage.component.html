@@ -21,28 +21,73 @@
 
     background-size: cover;"
   >
-    <div class="container d-flex flex-column justify-content-md-center align-items-center" style="height: 90vh;">
-      <h1 class="text-white mb-2" style="margin-top: -90px;">Welcome to <span class="text-white">Clariv</span
-        ><span class="text-success">Ate</span></h1>
-      <p class="text-white mb-4">Your ultimate culinary companion!</p>
+      <div id="text" class="container d-flex flex-column justify-content-md-center align-items-center" style="height: 90vh;">
+        
+        <div class="word">
+          <h2 class="text-white mb-2" style="margin-top: -90px; " >Welcome to</h2>
+        </div>
+         
+        <div class="line">
+          <a 
+             id="channel-link" 
+             href="https://clarivate.com/about-us/" 
+             target="_blank" 
+             class="word fancy"
+          >
+          <!-- <h1 class="text-white mb-2" style="margin-top: -30px; font-family: 'Space Mono', monospace;
+          font-size: clamp(3rem, 10vw, 10rem);
+          color: white;
+          padding: 0rem clamp(1rem, 2vw, 3rem);
+          border-radius: clamp(0.4rem, 0.75vw, 1rem);" >VAANT yumm🍗</h1> -->
+
+          <h2 class="text-white mb-2" style="margin-top: -30px; font-family: 'Space Mono', monospace;
+          font-size: clamp(2rem, 8vw, 8rem);
+          color: white;
+          padding: 0rem clamp(1rem, 2vw, 3rem);
+          border-radius: clamp(0.4rem, 0.75vw, 1rem);" ><div class="fancy">
+            <div class="outer">V</div>
+            <div class="outer">A</div>
+            <div class="outer">A</div>
+            <div class="outer">N</div>
+            <div class="outer">T</div>
+            <div class="outer"> </div>
+            <div class="outer">y</div>
+            <div class="outer">u</div>
+            <div class="outer">m</div>
+            <div class="outer">m</div>
+            <div class="outer">🍗</div>
+          </div></h2>
+
+          </a>
+        </div>
+      
+        <div class="word">
+          <h3 class="text-white mb-4">Your ultimate culinary companion!</h3>
+      </div>
+</div>
+      
+
+
+
+
+<!-- Buttons go here -->
       <div class="btn-group" role="group" aria-label="Account Buttons">
-        <button
+        <!-- <button
           type="button"
           class="btn btn-outline-secondary"
           style="color: white; font-size: x-large"
           (click)="checkIfLogin()"
         >
           Already Have an Account?
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           type="button"
           class="btn btn-outline-secondary"
           style="color: white; font-size: x-large"
           routerLink="register"
         >
           Wish to Create an Account?
-        </button>
+        </button> -->
       </div>
-    </div>
   </body>
 </html>

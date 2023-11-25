@@ -9,79 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomepageComponent implements OnInit {
   constructor(private router: Router) {}
   user: any;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  ngOnInit(): void {
-
-    const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-let interval: NodeJS.Timeout | null = null;
-
-const h1Element = document.querySelector("#text h3") as HTMLHeadingElement;
-
-// Store the original data
-let originalData: string = h1Element.innerText;
-
-//h1Element.onmouseover = () => {
-  let iteration: number = 0;
-
-  clearInterval(interval!);
-
-  interval = setInterval(() => {
-    h1Element.innerText = h1Element.innerText
-      .split("")
-      .map((_, index) => {
-        if (index < iteration) {
-          return originalData[index];
-        }
-
-        return letters[Math.floor(Math.random() * 26)];
-      })
-      .join("");
-
-    if (iteration >= originalData.length) {
-      clearInterval(interval!);
-      h1Element.innerText = originalData; // Ensure the final text is the original data
-    }
-
-    iteration += 1 / 3;
-  }, 50);
-
-//};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
+  ngOnInit(): void {}
   checkIfLogin() {
     try {
       this.user = JSON.parse(localStorage.getItem('user')!);
@@ -102,6 +30,5 @@ let originalData: string = h1Element.innerText;
     } catch (error) {
       this.router.navigate(['login']);
     }
-
   }
 }

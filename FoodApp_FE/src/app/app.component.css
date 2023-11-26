@@ -9,7 +9,7 @@
     
   }
   
-
+  /* 3D button */
   .btn3d {
     position: relative;
     top: -6px;
@@ -55,10 +55,61 @@
     position: relative;
     font-family: 'Space Mono', monospace; /* Use Space Mono or any monospaced font */
     font-size: 25px;
-    font-weight: bold; /* Make the text bold */
-    letter-spacing: 2px; /* Add space between letters */
+    font-weight: bold;
+    letter-spacing: 2px; 
     border-radius: 5px;
     border: 1px solid #3498db;
     cursor: pointer;
   }
   
+  /* effect-shine */
+  .navbar-brand .effect-shine:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+    -webkit-mask-size: 200%;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+    mask-size: 200%;
+    animation: shine 2s infinite;
+    color: #fff; /* Light color for text on black background */
+    text-shadow: 0 1px 0 #666, 0 2px 0 #666,
+    0 3px 0 #666, 0 4px 0 #666,
+    0 5px 0 #666, 0 6px 0 #666,
+    0 7px 0 #666, 0 8px 0 #666,
+    0 9px 0 #666, 0 10px 0 #666,
+    0 11px 0 #666, 0 12px 0 #666,
+    0 20px 30px rgba(0, 0, 0, 0.7); /* Adjusted shadow color for better visibility on black background */
+}
+
+  /* effect-shine */
+  .navbar-brand .effect-shine{
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 70%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+    color: #fff; /* Light color for text on black background */
+    text-shadow: 0 1px 0 #666, 0 2px 0 #666,
+    0 3px 0 #666, 0 4px 0 #666,
+    0 5px 0 #666, 0 6px 0 #666,
+    0 7px 0 #666, 0 8px 0 #666,
+    0 9px 0 #666, 0 10px 0 #666,
+    0 11px 0 #666, 0 12px 0 #666,
+    0 20px 30px rgba(0, 0, 0, 0.7); /* Adjusted shadow color for better visibility on black background */
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+    mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+    mask-position: -50%;
+  }
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}

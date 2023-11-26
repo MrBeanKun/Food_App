@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong" style="background: rgb(0, 0, 0) ;height: 10vh">
   <div class="container-fluid">
     <!-- Need changes -->
-    <a class="navbar-brand" routerLink="" aria-label="Clarivate Eats">
+    <a class="navbar-brand" routerLink="" aria-label="Clarivate Eats" style="font-size: 35px;font-weight: bolder;">
       <span class="text-white">Clariv</span
       ><span class="text-success">What</span>
     </a>
@@ -28,13 +28,14 @@
               <a class="nav-link" routerLink="register">Register</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" routerLink="#" (click)="goDashboard()"
+                >Dashboard</a>
+            </li>
+            
+            <li class="nav-item">
               <a class="nav-link" routerLink="login" (click)="checkIfLogin()"
                 >Login</a
               >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="#" (click)="goDashboard()"
-                >Dashboard</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" routerLink="#" (click)="goEditProfile()"
@@ -48,20 +49,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="">Home</a>
+          <a class="nav-link" routerLink="" style="font-size: 24px;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="register">Register</a>
+          <a class="nav-link" routerLink="register"style="font-size: 24px;">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="login" (click)="checkIfLogin()"
-            >Login</a
-          >
+          <a class="nav-link" routerLink="#" (click)="goDashboard()"style="font-size: 24px;">
+            Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="#" (click)="goDashboard()"
-            >Dashboard</a>
+          <a class="nav-link" routerLink="#" (click)="checkIfLogin()"style="font-size: 24px;">
+            Login</a>
         </li>
+        
+        
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="#" (click)="goEditProfile()"
             >Edit Profile</a
@@ -69,6 +71,11 @@
         </li> -->
       </ul>
     </div>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
+    <button type="button" class="nav-link btn3d btn btn-default btn-lg" routerLink="login" (click)="checkIfLogin()">
+      <span class="glyphicon glyphicon-download-alt"></span> Login
+    </button>
   </div>
 </nav>
 

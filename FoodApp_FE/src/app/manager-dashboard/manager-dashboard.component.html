@@ -1,11 +1,12 @@
 <div class="registerPage" style="
     width: 100%;
-    height: 90vh;
-    background: white;
+    height: 100vh;
+    background: black;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     text-align: center;
+    background-color: #000000;
     background: linear-gradient(90deg, #000000, #4b4b4b5a);
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
 
@@ -14,7 +15,7 @@
   ">
   <div>
     <div class="profile-icon" data-bs-toggle="modal" data-bs-target="#exampleModal"
-      style="position: absolute; top: 20px; right: 20px; cursor: pointer">
+      style="position: absolute; top: 100px; right: 20px; cursor: pointer">
       <div class="col-md-11">
         <img src="https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=Aneka" alt="avatar"
           class="img-fluid rounded-circle object-fit-lg-cover" style="width: 50px; height: 50px" />
@@ -52,20 +53,21 @@
     <div class="card" style="background: rgba(255,255,255,0.2);">
       <div class="card-body">
         <div class="d-flex justify-content-end mt-3 gap-2 m-lg-4">
-          <button type="button" class="btn btn-close-white" [routerLink]="['/showStaff']">
+          <!-- Code for show button
+            <button type="button" class="btn btn-close-white" [routerLink]="['/showStaff']">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill"
               viewBox="0 0 16 16">
               <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
             </svg>
             Staff
-          </button>
-          <button type="button" class="btn btn-close-white" [routerLink]="['/add-fp']">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus"
+          </button> -->
+          <button type="button" class="button-30" [routerLink]="['/add-fp']">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus"
               viewBox="0 0 16 16">
               <path
                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-            </svg>
-            Add Food Product
+            </svg> -->
+            + Add Food Product 🍽️ 
           </button>
         </div>
         <table class="table table-hover table-bordered table-dark">
@@ -93,19 +95,75 @@
               <td>{{ r.price }}</td>
               <td>
                 <button type="button" class="btn btn-light" style="width: 100px" [routerLink]="['/edit-fp/', r.id]">
-                  Edit
+                        Edit ✍
                 </button>
               </td>
               <td>
-                <button type="button" class="btn btn-danger" style="width: 100px" (click)="deletefp(r.id)">
-                  Delete
+                <button type="button" class="btn btn-danger bolder" style="width: 100px" (click)="deletefp(r.id)">
+                        Delete 🗑️
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+      
       <h5 style="color: rgba(87, 87, 87, 0.578); font-size: medium" *ngIf="menuFlag">
+        Apologies, but it seems our menu is currently empty. <br />
+        Would you like to add some items? <br />
+        Do it🔫
+      </h5>
+    </div>
+
+
+    <div class="card" style="background: rgba(255,255,255,0.2);margin-top: 20px;">
+      <div class="card-body">
+        <div class="d-flex justify-content-end mt-3 gap-2 m-lg-4">
+          <button type="button" class="button-30" [routerLink]="['/addStaff']">
+            +Add Staff
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-person-fill-add" viewBox="0 0 16 16">
+              <path
+                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path
+                d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
+            </svg>
+            
+          </button>
+        </div>
+        <table class="table table-hover table-bordered table-dark">
+          <thead class="table-dark">
+            <tr>
+              <th colspan="5"><h3>Staff Records</h3></th>
+            </tr>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of allStaff">
+              <td>{{ r.id }}</td>
+              <td>{{ r.name }}</td>
+              <td>{{ r.email }}</td>
+              <td>
+                <button type="button" class="btn btn-light" style="width: 100px" [routerLink]="['/editStaff/', r.id]">
+                  Edit ✍
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" style="width: 100px" (click)="deleteStaff(r.id)">
+                  Delete 🗑️
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 style="color: rgba(87, 87, 87, 0.578); font-size: medium" *ngIf="staffFlag">
         Apologies, but it seems our menu is currently empty. <br />
         Would you like to add some items? <br />
         Do it🔫

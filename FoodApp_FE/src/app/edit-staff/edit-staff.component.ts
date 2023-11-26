@@ -46,7 +46,7 @@ export class EditStaffComponent implements OnInit {
       console.log(this.selectedStaff);
 
       alert(this.res.message);
-      this.router.navigate(['/showStaff']);
+      this.router.navigate(['/manager']);
     });
   }
 }

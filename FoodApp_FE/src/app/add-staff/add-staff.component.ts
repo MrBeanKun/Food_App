@@ -25,7 +25,7 @@ export class AddStaffComponent implements OnInit {
 
     this.userService.registerUser(form.value).subscribe((res) => {
       console.log(res);
-      this.router.navigate(['/showStaff']);
+      this.router.navigate(['/manager']);
       alert('Staff Hired Successfully!');
     });
   }

@@ -40,7 +40,7 @@ export class MangStaffComponent implements OnInit {
     if (this.reply == true) {
       this.userService.deleteUser(id).subscribe((response) => {
         console.log(response);
-        this.router.navigate(['showStaff']);
+        this.router.navigate(['manager']);
         this.userService.getAllStaffs().subscribe((data) => {
           console.log(data);
           this.allStaff = data;

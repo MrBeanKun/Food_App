@@ -2,9 +2,10 @@
   class="registerPage"
   style="
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url(../../assets/img/loginBack.jpg);
+    height: 90vh;
+     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+
+      url(https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,16 +21,28 @@
                 class="mb-4 pb-3 pb-md-0 mb-md-3 px-md-2"
                 style="text-align: center"
               >
-                <h3>Welcome Back</h3>
-                <br />
-                <h4>Enter Login Credentials!</h4>
+                <h4 id="threeD" style="
+                text-transform: uppercase;
+                font-family: verdana;
+                font-weight: 700;
+                color: #f5f5f5;
+                text-shadow: 1px 1px 1px #919191,
+                    1px 2px 1px #919191,
+                    1px 3px 1px #919191,
+                    1px 4px 1px #919191,
+                    1px 5px 1px #919191,
+                1px 18px 6px rgba(16,16,16,0.4),
+                1px 22px 10px rgba(16,16,16,0.2),
+                1px 25px 35px rgba(16,16,16,0.2),
+                1px 30px 60px rgba(16,16,16,0.4);
+                ">Login</h4>
               </h3>
               <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
                 <div class="card-body">
                   <div class="mb-3">
-                    <label for="Email" class="form-label"
-                      ><b>Enter Your Email address</b></label
-                    >
+                    <!-- <label for="Email" class="form-label" style="color: white;-webkit-text-stroke: 0.5px black; font-size: 100 px;"
+                      ><b>  Email address</b></label
+                    > -->
                     <input
                       name="email"
                       #email="ngModel"
@@ -37,21 +50,22 @@
                       type="email"
                       class="form-control"
                       id="inputEmail"
-                      placeholder="Enter your email address here"
+                      style=" background: rgba(255, 255, 255, 0.5);"
+                      placeholder="👤 Enter your email address here"
                       pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
                       required
                     />
                     <span
                       *ngIf="email.invalid && email.touched"
-                      style="color: red"
-                      >Invalid email</span
+                      style="color: red;font-weight: bold;-webkit-text-stroke: 0.6px black"
+                      >❌ Invalid email</span
                     >
                   </div>
 
-                  <div class="mb-3">
-                    <label for="Password" class="form-label"
+                  <div class="mb-3" sty>
+                    <!-- <label for="Password" class="form-label" style="color: white;-webkit-text-stroke: 0.5px black;"
                       ><b>Password</b></label
-                    >
+                    > -->
                     <input
                       name="password"
                       #password="ngModel"
@@ -59,13 +73,14 @@
                       type="password"
                       class="form-control"
                       id="inputPassword"
-                      placeholder="Enter your password here"
+                      style=" background: rgba(255, 255, 255, 0.5);"
+                      placeholder="🔑 Enter your password here"
                       required
                     />
                     <span
                       *ngIf="password.invalid && password.touched"
-                      style="color: red"
-                      >Password required</span
+                      style="color: red ;font-weight: bold;-webkit-text-stroke: 0.6px black"
+                      >❌Password required</span
                     >
                   </div>
                 </div>
@@ -81,13 +96,13 @@
                 <br />
                 <br />
               </form>
-              <button
+              <!-- <button
                 class="btn btn-info"
                 style="width: 100%"
                 [routerLink]="['']"
               >
                 Back to HomePage
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -95,7 +110,7 @@
     </div>
   </section>
 </div>
-<footer class="text-center text-white" style="background-color: #caced1">
+<!-- <footer class="text-center text-white" style="background-color: #caced1">
   <div
     class="text-center text-dark p-3"
     style="background-color: rgba(0, 0, 0, 0.2); position: relative"
@@ -103,9 +118,9 @@
     <a class="text-dark" href="#"
       ><i
         ><ul>
-          Developed by Group 9
+          Developed by Team 7
         </ul></i
       ></a
     >
   </div>
-</footer>
+</footer> -->

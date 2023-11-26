@@ -1,10 +1,38 @@
-<div class="container">
-  <h2 style="padding: 20px; text-align: center;">Update Food Order</h2>
+<div class="container"
+style="
+width: 100%;
+height: 90vh;
+ background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+
+  url(https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+"
+>
+
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    
+    <div class="col-md-6" style="margin-top: 10vh;border-radius: 10px; background: rgba(0, 0, 0, 0.292);">
+      <br>
+      <h2 id="threeD" style="
+      text-transform: uppercase;
+      font-family: verdana;
+      font-weight: 700;
+      color: #f5f5f5;
+      text-shadow: 1px 1px 1px #919191,
+          1px 2px 1px #919191,
+          1px 3px 1px #919191,
+          1px 4px 1px #919191,
+          1px 5px 1px #919191,
+      1px 18px 6px rgba(16,16,16,0.4),
+      1px 22px 10px rgba(16,16,16,0.2),
+      1px 25px 35px rgba(16,16,16,0.2),
+      1px 30px 60px rgba(16,16,16,0.4);
+      ">Update Food Order</h2>
       <form #orderToUpdate="ngForm" (ngSubmit)="updateOrder(orderToUpdate)">
         <div class="form-group">
-          <label for="customerName" style="font-weight: bold; color: rgb(0, 0, 0);">Update Name</label>
+          <label for="customerName" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Update Name</label>
           <input name="customerName" #customerName="ngModel" ngModel type="text" id="customerName" class="form-control"
             [(ngModel)]="selectedProduct.customerName" required />
           <div class="invalid-feedback" *ngIf="customerName.invalid && customerName.touched">
@@ -13,7 +41,7 @@
         </div>
         <br>
         <div class="form-group">
-          <label for="contactNumber" style="font-weight: bold; color: rgb(0, 0, 0);">Update Contact Number</label>
+          <label for="contactNumber" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Update Contact Number</label>
           <input name="contactNumber" #contactNumber="ngModel" ngModel type="tel" id="contactNumber"
             class="form-control" [(ngModel)]="selectedProduct.contactNumber" required />
           <div class="invalid-feedback" *ngIf="contactNumber.invalid && contactNumber.touched">
@@ -22,30 +50,46 @@
         </div>
         <br>
 
-        <label for="contactNumber" style="font-weight: bold; color: rgb(0, 0, 0);">Choose from menu</label>
+        <label for="contactNumber" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Choose from menu</label>
         <div class="list-group foodproduct" *ngFor="let f of allItems.data">
           <a class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
               <p class="mb-1">{{ f.name }}</p>
               <p class="mb-1">{{ f.type }}</p>
               <small class="mb-1"> &#8377;{{ f.price }}</small>
-              <div>
-                <button type="button" class="btn btn-primary" (click)="addNewItem(f.id, f.price)">+</button>
-                &nbsp;<span style="font-size: medium; color: rgb(0, 0, 0);">
+              <div class="btn-group">
+                <button type="button" class="btn btn-success" (click)="addNewItem(f.id, f.price)">+</button>
+                &nbsp;<button class="btn btn-light"style="font-size: medium; color: rgb(0, 0, 0);">
                   {{ itemCountMap.get(f.id) ? itemCountMap.get(f.id) : 0 }}
-                </span>&nbsp; 
-                <button type="button" class="btn btn-primary" (click)="removeItem(f.id, f.price)">-</button>
+                </button>&nbsp; 
+                <button type="button" class="btn btn-danger" (click)="removeItem(f.id, f.price)">-</button>
               </div>
             </div>
           </a>
         </div>
 
-        <h4 class="mt-3">
-          Total price: <span id="totalPriceValue">{{ totalOrderPrice }}</span>
-        </h4>
+        <h4 class="mt-5" id="threeD" style="
+        text-transform: uppercase;
+        font-family: verdana;
+        font-weight: 700;
+        color: #f5f5f5;
+        text-shadow: 1px 1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            1px 5px 1px #919191,
+        1px 18px 6px rgba(16,16,16,0.4),
+        1px 22px 10px rgba(16,16,16,0.2),
+        1px 25px 35px rgba(16,16,16,0.2),
+        1px 30px 60px rgba(16,16,16,0.4);
+        ">Total price: <span id="totalPriceValue">{{ totalOrderPrice }}</span></h4>>
+          
 
         <button class="btn btn-success btn-block mt-4" type="submit">Update the Order</button>
       </form>
+      <br>
     </div>
+
   </div>
+  
 </div>

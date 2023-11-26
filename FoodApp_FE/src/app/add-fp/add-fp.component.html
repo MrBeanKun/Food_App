@@ -36,12 +36,12 @@ margin-top: 20px;
               ">   🍚  Add Food Product</h4>
             </div>
             <h6  class="text-center text-muted p-md-2"> Food Product Details</h6>
-              <label for="name" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Name</label>
-              <input type="text" class="form-control" placeholder="Enter the name of the Food Product" id="name" name="name" #name="ngModel" ngModel required>
+              <label for="name" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Dish Name</label>
+              <input type="text" class="form-control" placeholder="Name the Food Product" id="name" name="name" #name="ngModel" ngModel required>
               <div *ngIf="name.touched && name.invalid" class="text-danger">Kindly fill out this field</div>
           </div>
           <div class="mb-3">
-            <label for="type" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Type</label>
+            <label for="type" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Category</label>
             <select class="form-select" id="type" name="type" #type="ngModel" [(ngModel)]="selectedType" required>
               <option value="Veg">Veg</option>
               <option value="Non-Veg">Non-Veg</option>
@@ -51,7 +51,7 @@ margin-top: 20px;
           
           <div class="mb-3">
               <label for="about" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">About</label>
-              <input type="text" placeholder="Enter About the Food Product" class="form-control" id="about" name="about" #about="ngModel" ngModel required>
+              <input type="text" placeholder="Describe Product Name" class="form-control" id="about" name="about" #about="ngModel" ngModel required>
               <div *ngIf="about.touched && about.invalid" class="text-danger">Kindly fill out this field</div>
           </div>
           <div class="mb-3">
@@ -62,7 +62,7 @@ margin-top: 20px;
           </div>
           <div class="mb-3">
               <label for="price" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Price</label>
-              <input type="number" class="form-control" placeholder="Enter the price of the Food Product" id="price" name="price" #price="ngModel" ngModel required>
+              <input type="number" class="form-control" placeholder="Price of Food Product" id="price" name="price" #price="ngModel" ngModel required>
               <div *ngIf="price.touched && price.invalid" class="text-danger">Kindly fill out this field</div>
           </div>
           <div class="text-center">

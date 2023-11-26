@@ -10,7 +10,7 @@ export class HomepageComponent implements OnInit {
   constructor(private router: Router) {}
   user: any;
 
-
+  current_user = JSON.parse(localStorage.getItem('user')!);
 
 
 

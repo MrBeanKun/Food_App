@@ -22,4 +22,15 @@ export class AuthorizationService {
       return false
     }
   }
+  // isLoggedIn(){
+  //   if (this.user !== null) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+
+  isLoggedIn(): boolean {
+    return !localStorage.getItem('user');
+  }  
 }

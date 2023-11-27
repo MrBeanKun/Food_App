@@ -13,7 +13,7 @@
   .h-custom {
     margin-bottom: 0; /* Remove bottom margin */
   }
-  .center-buttons {
+    .center-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;

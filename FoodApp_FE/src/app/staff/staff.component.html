@@ -10,7 +10,7 @@
     color: rgb(0, 0, 0);
   ">
 
-  <div>
+  <!-- <div>
     <div class="profile-icon" data-bs-toggle="modal" data-bs-target="#exampleModal"
       style="position: absolute; top: 20px; right: 20px; cursor: pointer">
       <div class="col-md-11">
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -44,7 +44,7 @@
     </div>
 
     <br />
-  </div>
+  </div> -->
   <div class="container">
     <div class="orders">
       <button type="button" class="btn btn-dark button-30"  [routerLink]="['/create-order']"
@@ -58,12 +58,12 @@
       </button>
       <br /><br />
 
-      <h4 *ngIf="!flag">
+      <h4 *ngIf="!flag" style="color:white;">
         No orders found, Create Some!
       </h4>
 
       <div *ngFor="let fo of allOrders.data | filter: searchOrder">
-        <div class="card" style="cursor: pointer; margin-bottom: 5px; ">
+        <div class="card" style="cursor: pointer; margin-bottom: 5px; " style=" background: rgba(255, 255, 255, 0.5);">
           <div class="card-header" data-bs-toggle="collapse" [attr.data-bs-target]="'#orderDetails_' + fo.id">
             <div class="row">
               <div class="col">
@@ -92,24 +92,24 @@
           </div>
           <div [id]="'orderDetails_' + fo.id" class="collapse">
             <div class="card-body" style="color: rgb(19, 19, 19)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor"
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor"
                 class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
                 <path
                   d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
-              </svg>
+              </svg> -->
               <br><br>
               <h6>Name of the Customer: {{ fo.customerName }}</h6>
               <h6>Contact Number: {{ fo.contactNumber }}</h6>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
+            <ul class="list-group list-group-flush"  >
+              <li class="list-group-item" style=" background: rgba(255, 255, 255, 0.5);">
                 Total Amount of the Order: {{ fo.totalPrice }}
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" style=" background: rgba(255, 255, 255, 0.5);">
                 Created Date: {{ fo.orderCreatedTime | date:'mediumDate' }} {{ fo.orderCreatedTime | date:'shortTime' }}
               </li>
               
-              <li class="list-group-item">
+              <li class="list-group-item" style=" background: rgba(255, 255, 255, 0.5);">
                 Delivered At: {{ fo.orderDeliveryTime | date:'mediumDate' }} {{ fo.orderDeliveryTime | date:'shortTime' }}
             </li>
             

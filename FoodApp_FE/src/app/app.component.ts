@@ -42,6 +42,9 @@ export class AppComponent implements DoCheck {
         } else if (role === 'BranchManager') {
           console.log('Manager Dashboard');
           this.router.navigate(['manager']);
+        }else if (role === 'Admin') {
+          console.log('Admin Dashboard');
+          this.router.navigate(['admin']);
         }
       }
     } catch (error) {
@@ -74,7 +77,11 @@ export class AppComponent implements DoCheck {
           } else if (role === 'BranchManager') {
             console.log('Manager Dashboard');
             this.router.navigate(['manager']);
+          }else if (role === 'Admin') {
+            console.log('Admin Dashboard');
+            this.router.navigate(['admin']);
           }
+          
         }
       }
     } catch (error) {

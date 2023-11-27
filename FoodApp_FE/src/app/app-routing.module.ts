@@ -13,6 +13,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AddFpComponent } from './add-fp/add-fp.component';
 import { EditFpComponent } from './edit-fp/edit-fp.component';
 import { EditOrderComponent } from './edit-order/edit-order.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component'
+
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'edit-order/:id', component: EditOrderComponent },
   { path: 'showStaff', component: MangStaffComponent },
   { path: 'addStaff', component: AddStaffComponent },
+  { path: 'admin', component:AdminDashboardComponent},
   { path: 'editStaff/:id', component: EditStaffComponent },
   { path: 'editProfile/:id', component: EditProfileComponent },
 ];

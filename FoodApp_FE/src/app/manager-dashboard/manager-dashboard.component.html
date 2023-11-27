@@ -13,7 +13,7 @@
       url(https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 
   ">
-  <div>
+  <!-- <div>
     <div class="profile-icon" data-bs-toggle="modal" data-bs-target="#exampleModal"
       style="position: absolute; top: 100px; right: 20px; cursor: pointer">
       <div class="col-md-11">
@@ -22,7 +22,6 @@
       </div>
     </div>
 
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -47,7 +46,7 @@
     </div>
 
     <br />
-  </div>
+  </div> -->
 
   <div class="container" >
     <div class="card" style="background: rgba(255,255,255,0.2);">
@@ -108,10 +107,8 @@
         </table>
       </div>
       
-      <h5 style="color: rgba(87, 87, 87, 0.578); font-size: medium" *ngIf="menuFlag">
-        Apologies, but it seems our menu is currently empty. <br />
-        Would you like to add some items? <br />
-        Do it🔫
+      <h5 style="color: rgba(87, 87, 87, 0.578); font-size: medium" *ngIf="menuFlag" style="color:white;">
+        Apologies, the menu is currently empty.<br /> Go ahead and add some yummy stuff! 🍔🍕
       </h5>
     </div>
 
@@ -163,10 +160,9 @@
           </tbody>
         </table>
       </div>
-      <h5 style="color: rgba(87, 87, 87, 0.578); font-size: medium" *ngIf="staffFlag">
-        Apologies, but it seems our menu is currently empty. <br />
-        Would you like to add some items? <br />
-        Do it🔫
+      <h5 style="color: rgba(87, 87, 87, 0.578); font-size: medium" *ngIf="staffFlag" style="color:white;">
+        Apologies, but it seems you have no employees<br />
+        Kindly hire workers!👷
       </h5>
     </div>
   </div>

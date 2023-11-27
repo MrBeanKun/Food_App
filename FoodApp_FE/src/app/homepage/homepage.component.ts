@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import {AuthorizationService} from 'src/app/Services/authorization.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-  constructor(private router: Router) {}
+  isLoggedin: boolean | undefined;
+  constructor(private router: Router,private auth:AuthorizationService) {}
   user: any;
 
   current_user = JSON.parse(localStorage.getItem('user')!);
@@ -27,6 +29,8 @@ export class HomepageComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.isLoggedin = this.auth.isLoggedIn();
 
     const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

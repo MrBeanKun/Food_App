@@ -10,11 +10,14 @@ import {AuthorizationService} from 'src/app/Services/authorization.service';
 })
 export class AppComponent implements DoCheck {
   title = 'FoodApp';
+  user_detail: any;
   constructor(private router: Router,private auth:AuthorizationService) {}
+  
   ngDoCheck(): void {
     this.isLoggedin = this.auth.isLoggedIn();
     console.log(this.isLoggedin);
-    console.log("I adithyan created this flag");
+    this.user_detail = JSON.parse(localStorage.getItem('user')!);
+    console.log("Login status");
   }
   user: any;
   isLoggedin:boolean | undefined;

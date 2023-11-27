@@ -33,9 +33,14 @@ padding: 0;
                 >Dashboard</a>
             </li>
             
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="this.isLoggedin">
               <a class="nav-link" routerLink="login" (click)="checkIfLogin()"
                 >Login</a
+              >
+            </li>
+            <li class="nav-item" *ngIf="!this.isLoggedin">
+              <a class="nav-link"  (click)="logout()"
+                >Logout</a
               >
             </li>
             <!-- <li class="nav-item">
@@ -68,11 +73,14 @@ padding: 0;
       </ul>
     </div>
   </div>
+  <div class="modal-body" style="color: white; font-style: italic;" *ngIf="!this.isLoggedin">
+    <p >Logged in as <span style="font-weight: bold;">{{ user_detail.name }}</span></p>
+  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
     <button *ngIf="this.isLoggedin" type="button" class="nav-link btn3d btn btn-default btn-lg" routerLink="login" (click)="checkIfLogin()">
       <span class="glyphicon glyphicon-download-alt"></span> Login
     </button>
-    <button *ngIf="!this.isLoggedin" type="button" class="nav-link btn3d btn btn-default btn-lg" (click)="logout()">
+    <button *ngIf="!this.isLoggedin" type="button" class="nav-link btn3d btn btn-danger btn-lg" style="color:white"(click)="logout()">
       <span class="glyphicon glyphicon-download-alt">Logout</span> 
     </button>
   </div>

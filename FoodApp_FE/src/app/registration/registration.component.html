@@ -35,12 +35,12 @@
               1px 22px 10px rgba(16,16,16,0.2),
               1px 25px 35px rgba(16,16,16,0.2),
               1px 30px 60px rgba(16,16,16,0.4);
-              ">Register/Add Employee Details</h4>
+              ">Add Manager Details</h4>
               </h3>
               <form #regForm="ngForm" (ngSubmit)="register(regForm)">
                 <div class="mb-3">
                   <label for="Name" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
-                    ><b>Enter Your Name</b></label
+                    ><b>Manager's Name</b></label
                   >
                   <input
                     name="name"
@@ -49,7 +49,7 @@
                     type="text"
                     class="form-control"
                     id="inputName"
-                    placeholder="Enter your name here"
+                    placeholder="Enter manager's name"
                     required
                   />
                   <span *ngIf="name.invalid && name.touched" style="color: red"
@@ -59,7 +59,7 @@
 
                 <div class="mb-3">
                   <label for="Email" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
-                    ><b>Enter Your Email address</b></label
+                    ><b>Manager's Email address</b></label
                   >
                   <input
                     name="email"
@@ -68,7 +68,7 @@
                     type="email"
                     class="form-control"
                     id="inputEmail"
-                    placeholder="Enter your email address here"
+                    placeholder="Enter manager's email address"
                     pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
                     required
                   />
@@ -90,7 +90,7 @@
                     type="password"
                     class="form-control"
                     id="inputPassword"
-                    placeholder="Enter your password here"
+                    placeholder="Enter a password for this account"
                     pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})"
                     required
                   />
@@ -101,7 +101,7 @@
                   >
                 </div>
 
-                <div class="form-group mb-3">
+                <!-- <div class="form-group mb-3">
                   <label for="Role"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"><b>Please Select Your Role</b></label>
                   <select
                     class="form-control"
@@ -116,7 +116,7 @@
                     <option [ngValue]="manager">Manager</option>
                     <option [ngValue]="staff">Staff</option>
                   </select>
-                </div>
+                </div> -->
 
                 <button
                   type="submit"

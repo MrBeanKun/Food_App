@@ -22,12 +22,12 @@ padding: 0;
             <span class="navbar-toggler-icon"></span>
           </button>
           <ul class="dropdown-menu">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="register">Register</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" routerLink="#" (click)="goDashboard()"
                 >Dashboard</a>
@@ -54,14 +54,14 @@ padding: 0;
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="" style="font-size: 24px;">Home</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="register"style="font-size: 24px;">Register</a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="#" (click)="goDashboard()"style="font-size: 24px;">
+          <a class="nav-link" routerLink="#" (click)="goDashboard()"style="font-size: 24px;" *ngIf="!this.isLoggedin">
             Dashboard</a>
         </li>
         

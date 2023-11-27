@@ -25,10 +25,10 @@ export class RegistrationComponent implements OnInit {
     console.log(form.value);
     
     
-    // form.value.role = this.route.snapshot.params['role'];
+    form.value.role = this.manager;
     this.userService.registerUser(form.value).subscribe(res=>{
       console.log(res);
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/admin"]);
       alert("Registration successful");
     })
   }

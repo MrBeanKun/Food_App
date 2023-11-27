@@ -32,6 +32,7 @@
   .word {
     color: white;
     margin: 0rem;
+    font-size: 30px;
     transition: opacity 250ms ease;
   }
 
@@ -134,7 +135,7 @@
   :root {
     --color-background: #000119;
     --stroke-width: calc(1em / 16);
-    --font-size: 30vmin;
+    --font-size: 30px;
     --font-weight: 700;
     --letter-spacing: calc(1em / 8);
   }

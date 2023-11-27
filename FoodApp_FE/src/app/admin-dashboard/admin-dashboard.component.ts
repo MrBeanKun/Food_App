@@ -48,12 +48,13 @@ export class AdminDashboardComponent implements OnInit {
     this.reply = window.confirm(
       'Are you sure you want to Fire the manager Member?'
     );
+
     console.log(this.reply);
     if (this.reply == true) {
       this.userService.deleteUser(id).subscribe((response) => {
         console.log(response);
         this.router.navigate(['admin']);
-        this.userService.getAllStaffs().subscribe((data) => {
+        this.userService.getAllUsers().subscribe((data) => {
           console.log(data);
           this.allStaff = data;
           this.allStaff = this.allStaff.data;

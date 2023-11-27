@@ -14,20 +14,6 @@ export class HomepageComponent implements OnInit {
 
   current_user = JSON.parse(localStorage.getItem('user')!);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   ngOnInit(): void {
 
     this.isLoggedin = this.auth.isLoggedIn();

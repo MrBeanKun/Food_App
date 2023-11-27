@@ -89,24 +89,41 @@ background-size: cover;
                 </div>
 
                 <div class="mb-3">
-                  <label for="Password" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
-                    >Default Password</label
-                  >
+                  <label for="Password" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">
+                    <b>Branch</b>
+                  </label>
                   <input
-                    name="password"
-                    #password="ngModel"
+                    name="branch"
+                    #branch="ngModel"
                     ngModel
-                    type="password"
+                    type="text"
                     class="form-control"
-                    id="inputPassword"
-                    placeholder="newStaff"
-                    disabled
+                    id="inputBranch"
+                    placeholder="Enter assigned branch"
+                    required
                   />
-                  <span
-                    *ngIf="password.invalid && password.touched"
-                    style="color: red"
-                    >Password required</span
+                </div>
+
+                <div class="mb-3">
+                  <label for="Password" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
+                    >Password</label
                   >
+                  
+                  <input
+                  name="password"
+                  #password="ngModel"
+                  ngModel
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Enter a password for the user"
+                  required
+                />
+                <span
+                  *ngIf="password.invalid && password.touched"
+                  style="color: red ;font-weight: bold;-webkit-text-stroke: 0.6px black"
+                  >❌Password required</span
+                >
                 </div>
 
                 <button

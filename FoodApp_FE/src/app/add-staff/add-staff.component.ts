@@ -19,7 +19,6 @@ export class AddStaffComponent implements OnInit {
 
   addStaff(form: NgForm) {
     console.log(form.value);
-    form.value.password = 'newStaff';
     form.value.role = 'staff';
     console.log(form.value);
 

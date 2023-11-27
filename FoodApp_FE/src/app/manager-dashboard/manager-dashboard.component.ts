@@ -37,6 +37,10 @@ export class ManagerDashboardComponent implements OnInit {
       console.log(data);
       this.allStaff = data;
       this.allStaff = this.allStaff.data;
+      
+      // Filter based on a specific condition, e.g., role is 'desiredRole'
+     
+      this.allStaff =this.allStaff.filter((staff:{ branch: string}) =>staff.branch === this.manager.branch);
       console.log(this.allStaff);
       if (this.allStaff.length == 0) {
         this.staffFlag = true;

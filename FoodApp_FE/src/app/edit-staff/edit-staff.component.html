@@ -46,6 +46,7 @@ background-size: cover;
                         id="id"
                         name="id"
                         #id="ngModel"
+                        style="background-color: #919191;"
                         [(ngModel)]="selectedStaff.id"
                         readonly
                         disabled
@@ -77,6 +78,23 @@ background-size: cover;
                         required
                     />
                     <span *ngIf="email.touched && email.invalid" style="color: red">Please fill out this field</span>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="Password" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">
+                    <b>Branch</b>
+                  </label>
+                  <input
+                    name="branch"
+                    #branch="ngModel"
+                    ngModel
+                    type="text"
+                    class="form-control"
+                    id="inputBranch"
+                    [(ngModel)]="selectedStaff.branch"
+                    placeholder="Enter assigned branch"
+                    required
+                  />
                 </div>
 
                 <div class="mb-3">

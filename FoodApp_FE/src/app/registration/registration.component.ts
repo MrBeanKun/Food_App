@@ -12,8 +12,8 @@ import { UserService } from '../Services/user.service';
 export class RegistrationComponent implements OnInit {
 
   createUser : any;
-  manager = "BranchManager";
-  staff = "staff";
+  // manager = ;
+  // staff = "staff";
 
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
     console.log(form.value);
     
     
-    form.value.role = this.manager;
+    form.value.role = "BranchManager";
     this.userService.registerUser(form.value).subscribe(res=>{
       console.log(res);
       this.router.navigate(["/admin"]);

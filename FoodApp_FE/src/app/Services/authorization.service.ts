@@ -7,34 +7,30 @@ export class AuthorizationService {
 
   constructor() { }
 
-  user = JSON.parse(localStorage.getItem("user")!);
-  isLoggedInManager(){
-    console.log(this.user.role);
-    console.log('Logic gave this value as output');
-    if(this.user.role === "BranchManager"){
-      return true;
-    }else {
-      return false
-    }
-  }
-  isLoggedInStaff(){
-    console.log(this.user.role);
-    console.log('Logic gave this value as output');
-    if( this.user.role === "staff"){
-      return true;
-    }else {
-      return false
-    }
+  // user = JSON.parse(localStorage.getItem("user")!);
+  getUser() {
+    return JSON.parse(localStorage.getItem("user")!);
   }
 
-  isLoggedInAdmin(){
-    console.log(this.user.role);
+  isLoggedInManager(): boolean {
+    const user = this.getUser();
+    console.log(user?.role);
     console.log('Logic gave this value as output');
-    if(this.user.role === "Admin"){
-      return true;
-    }else {
-      return false
-    }
+    return user?.role === "BranchManager";
+  }
+
+  isLoggedInStaff(): boolean {
+    const user = this.getUser();
+    console.log(user?.role);
+    console.log('Logic gave this value as output');
+    return user?.role === "staff";
+  }
+
+  isLoggedInAdmin(): boolean {
+    const user = this.getUser();
+    console.log(user?.role);
+    console.log('Logic gave this value as output');
+    return user?.role === "Admin";
   }
   // isLoggedIn(){
   //   if (this.user !== null) {

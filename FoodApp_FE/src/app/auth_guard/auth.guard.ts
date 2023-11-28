@@ -11,9 +11,7 @@ export class AuthGuard implements CanActivate {
   constructor(private auth : AuthorizationService,private router :Router){
 
   }
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canActivate(){
       console.log(this.auth.isLoggedInManager());
       console.log('Manager got this value');
       if(this.auth.isLoggedInManager()){

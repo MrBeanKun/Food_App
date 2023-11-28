@@ -12,9 +12,7 @@ export class AuthStaffGuard implements CanActivate {
   constructor(private auth : AuthorizationService,private router :Router){
 
   }
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canActivate(){
      
    console.log(this.auth.isLoggedInStaff())
       if(this.auth.isLoggedInStaff()){

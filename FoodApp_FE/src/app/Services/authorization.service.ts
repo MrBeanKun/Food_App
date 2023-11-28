@@ -9,14 +9,28 @@ export class AuthorizationService {
 
   user = JSON.parse(localStorage.getItem("user")!);
   isLoggedInManager(){
-    if(this.user!=null && this.user.role === "BranchManager"){
+    console.log(this.user.role);
+    console.log('Logic gave this value as output');
+    if(this.user.role === "BranchManager"){
       return true;
     }else {
       return false
     }
   }
   isLoggedInStaff(){
-    if(this.user!=null && this.user.role === "staff"){
+    console.log(this.user.role);
+    console.log('Logic gave this value as output');
+    if( this.user.role === "staff"){
+      return true;
+    }else {
+      return false
+    }
+  }
+
+  isLoggedInAdmin(){
+    console.log(this.user.role);
+    console.log('Logic gave this value as output');
+    if(this.user.role === "Admin"){
       return true;
     }else {
       return false
@@ -29,6 +43,7 @@ export class AuthorizationService {
   //     return false;
   //   }
   // }
+
 
   isLoggedIn(): boolean {
     return !localStorage.getItem('user');

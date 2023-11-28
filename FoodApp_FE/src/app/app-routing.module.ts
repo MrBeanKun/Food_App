@@ -15,23 +15,26 @@ import { EditFpComponent } from './edit-fp/edit-fp.component';
 import { EditOrderComponent } from './edit-order/edit-order.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component'
 import { EditManagerComponent } from './edit-manager/edit-manager.component';
+import { AuthGuard } from './auth_guard/auth.guard';
+import { AuthAdminGuard } from './auth_guard/auth-admin.guard';
+import { AuthStaffGuard } from './auth_guard/auth-staff.guard';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'register', component: RegistrationComponent,canActivate:[AuthAdminGuard]},
   { path: 'login', component: LoginComponent },
-  { path: 'manager', component: ManagerDashboardComponent },
-  { path: 'staff', component: StaffComponent },
-  { path: 'add-fp', component: AddFpComponent },
-  { path: 'edit-fp/:id', component: EditFpComponent },
-  { path: 'create-order', component: CreateOrderComponent },
-  { path: 'edit-order/:id', component: EditOrderComponent },
-  { path: 'showStaff', component: MangStaffComponent },
-  { path: 'addStaff', component: AddStaffComponent },
-  { path: 'admin', component:AdminDashboardComponent},
-  { path: 'editStaff/:id', component: EditStaffComponent },
+  { path: 'manager', component: ManagerDashboardComponent,canActivate:[AuthGuard]},
+  { path: 'staff', component: StaffComponent,canActivate:[AuthStaffGuard]},
+  { path: 'add-fp', component: AddFpComponent,canActivate:[AuthGuard]},
+  { path: 'edit-fp/:id', component: EditFpComponent,canActivate:[AuthGuard]},
+  { path: 'create-order', component: CreateOrderComponent,canActivate:[AuthStaffGuard]},
+  { path: 'edit-order/:id', component: EditOrderComponent,canActivate:[AuthStaffGuard]},
+  { path: 'showStaff', component: MangStaffComponent,canActivate:[AuthGuard]},
+  { path: 'addStaff', component: AddStaffComponent,canActivate:[AuthGuard]},
+  { path: 'admin', component:AdminDashboardComponent,canActivate:[AuthAdminGuard]},
+  { path: 'editStaff/:id', component: EditStaffComponent,canActivate:[AuthGuard]},
   { path: 'editProfile/:id', component: EditProfileComponent },
-  { path: 'editManager/:id', component:EditManagerComponent}
+  { path: 'editManager/:id', component:EditManagerComponent,canActivate:[AuthAdminGuard]}
 ];
 
 @NgModule({

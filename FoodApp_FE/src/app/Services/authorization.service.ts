@@ -7,20 +7,30 @@ export class AuthorizationService {
 
   constructor() { }
 
-  user = JSON.parse(localStorage.getItem("user")!);
-  isLoggedInManager(){
-    if(this.user!=null && this.user.role === "BranchManager"){
-      return true;
-    }else {
-      return false
-    }
+  // user = JSON.parse(localStorage.getItem("user")!);
+  getUser() {
+    return JSON.parse(localStorage.getItem("user")!);
   }
-  isLoggedInStaff(){
-    if(this.user!=null && this.user.role === "staff"){
-      return true;
-    }else {
-      return false
-    }
+
+  isLoggedInManager(): boolean {
+    const user = this.getUser();
+    console.log(user?.role);
+    console.log('Logic gave this value as output');
+    return user?.role === "BranchManager";
+  }
+
+  isLoggedInStaff(): boolean {
+    const user = this.getUser();
+    console.log(user?.role);
+    console.log('Logic gave this value as output');
+    return user?.role === "staff";
+  }
+
+  isLoggedInAdmin(): boolean {
+    const user = this.getUser();
+    console.log(user?.role);
+    console.log('Logic gave this value as output');
+    return user?.role === "Admin";
   }
   // isLoggedIn(){
   //   if (this.user !== null) {
@@ -29,6 +39,7 @@ export class AuthorizationService {
   //     return false;
   //   }
   // }
+
 
   isLoggedIn(): boolean {
     return !localStorage.getItem('user');

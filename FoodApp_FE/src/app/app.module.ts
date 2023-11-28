@@ -20,6 +20,7 @@ import { EditStaffComponent } from './edit-staff/edit-staff.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { DatePipe } from '@angular/common';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { EditManagerComponent } from './edit-manager/edit-manager.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AddStaffComponent,
     EditStaffComponent,
     EditProfileComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    EditManagerComponent
   ],
 
   imports: [

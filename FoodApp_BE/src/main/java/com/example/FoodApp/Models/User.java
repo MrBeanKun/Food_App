@@ -24,6 +24,7 @@ public class User {
 	private String email;
 	private String password;
 	private String role;
+	private String branch;
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
 	@JsonIgnore
@@ -111,6 +112,14 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
 //	@Override

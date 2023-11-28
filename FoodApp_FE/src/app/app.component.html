@@ -74,10 +74,8 @@ padding: 0;
     </div>
   </div>
   <div class="modal-body" style="color: white; font-style: italic;" *ngIf="!this.isLoggedin">
-    <p>Logged in as <span style="font-weight: bold; display: inline;">{{ user_detail.name }}</span>
-      <span style="display: inline;"> ({{user_detail.branch}} {{user_detail.role}})</span></p>
-</div>
-
+    <p >Logged in as <span style="font-weight: bold;">{{ user_detail.name }} ({{user_detail.branch}} {{user_detail.role}}) </span></p>
+  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
     <button *ngIf="this.isLoggedin" type="button" class="nav-link btn3d btn btn-default btn-lg" routerLink="login" (click)="checkIfLogin()">
       <span class="glyphicon glyphicon-download-alt"></span> Login

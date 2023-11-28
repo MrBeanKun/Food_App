@@ -23,6 +23,7 @@ export class ManagerDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.menu.getMenu(this.manager.id).subscribe((data) => {
       this.result = data;
+      console.log(this.result);
       if (this.result.data.foodProducts.length != 0) {
         this.menuFlag = false;
       } else {
@@ -37,10 +38,8 @@ export class ManagerDashboardComponent implements OnInit {
       console.log(data);
       this.allStaff = data;
       this.allStaff = this.allStaff.data;
+      this.allStaff =this.allStaff.filter((staff:{ branch: string}) =>staff.branch === this.manager.branch);// Filter based on a specific condition, e.g., role is 'desiredRole'
       
-      // Filter based on a specific condition, e.g., role is 'desiredRole'
-     
-      this.allStaff =this.allStaff.filter((staff:{ branch: string}) =>staff.branch === this.manager.branch);
       console.log(this.allStaff);
       if (this.allStaff.length == 0) {
         this.staffFlag = true;

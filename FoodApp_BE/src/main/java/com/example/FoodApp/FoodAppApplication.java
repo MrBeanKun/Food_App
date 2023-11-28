@@ -24,7 +24,7 @@ public class FoodAppApplication {
 	}
 
 	List<VendorExtension> vendorExtensions = new ArrayList<VendorExtension>();
-	Contact contact = new Contact("team-9", "https://foodApp.com", "team1@clarivate.com");
+	Contact contact = new Contact("team-7", "https://foodApp.com", "team7@clarivate.com");
 	
 	//Parameters:	                1.title          2.description                   3.version   4.termsOfServiceUrl	 5.contact   6.license   7.license_url  8.vendorExtensions
 	ApiInfo apiInfo = new ApiInfo("Food-app", "Online food ordering system", "snapshot-0.01", "https://foodApp.com", contact,  "www.example.com","terms & conditions", vendorExtensions);

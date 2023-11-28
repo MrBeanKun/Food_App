@@ -35,7 +35,7 @@ background-size: cover;
               1px 22px 10px rgba(16,16,16,0.2),
               1px 25px 35px rgba(16,16,16,0.2),
               1px 30px 60px rgba(16,16,16,0.4);
-              ">Edit Staff Details</h4>
+              ">Edit Manager Details</h4>
               </h3>
               <form #editForm="ngForm" (ngSubmit)="OnSubmit(editForm)">
                 <div class="mb-3">
@@ -46,6 +46,7 @@ background-size: cover;
                         id="id"
                         name="id"
                         #id="ngModel"
+                        style="background-color: #919191;"
                         [(ngModel)]="selectedStaff.id"
                         readonly
                         disabled
@@ -80,26 +81,21 @@ background-size: cover;
                 </div>
                 
                 <div class="mb-3">
-                  <label for="Email" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
-                    >Enter Branch</label
-                  >
+                  <label for="Password" class="form-label" style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">
+                    <b>Branch</b>
+                  </label>
                   <input
                     name="branch"
                     #branch="ngModel"
-                    [(ngModel)]="selectedStaff.branch"
+                    ngModel
                     type="text"
                     class="form-control"
                     id="inputBranch"
-                    placeholder="Staff's assigned branch"
+                    [(ngModel)]="selectedStaff.branch"
                     required
                   />
-                  <span
-                    *ngIf="email.invalid && email.touched"
-                    style="color: red"
-                    >Enter Branch</span
-                  >
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="price" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black">Password</label>
                     <input
@@ -107,12 +103,15 @@ background-size: cover;
                         class="form-control"
                         id="password"
                         name="password"
+                        id="inputPassword"
                         #password="ngModel"
                         [(ngModel)]="selectedStaff.password"
                         required
                     />
                     <span *ngIf="password.touched && password.invalid" style="color: red">Please fill out this field</span>
                 </div>
+
+                
 
                 <button
                 [disabled]="!editForm.valid"

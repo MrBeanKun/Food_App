@@ -78,6 +78,27 @@
                     >Invalid email</span
                   >
                 </div>
+                
+                <div class="mb-3">
+                  <label for="Email" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
+                    >Enter Branch</label
+                  >
+                  <input
+                    name="branch"
+                    #branch="ngModel"
+                    ngModel
+                    type="text"
+                    class="form-control"
+                    id="inputBranch"
+                    placeholder="Staff's assigned branch"
+                    required
+                  />
+                  <span
+                    *ngIf="email.invalid && email.touched"
+                    style="color: red"
+                    >Enter Branch</span
+                  >
+                </div>
 
                 <div class="mb-3">
                   <label for="Password" class="form-label"  style="color: white;font-weight: bold;-webkit-text-stroke: 0.3px black"
@@ -131,7 +152,7 @@
               <button
                 class="btn btn-info"
                 style="width: 100%"
-                [routerLink]="['']"
+                [routerLink]="['/admin']"
               >
                 Go Back
               </button>

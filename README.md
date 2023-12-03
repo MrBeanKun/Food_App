@@ -18,15 +18,19 @@ Before you begin, make sure you have the following software installed on your ma
 
 First, clone this repository to your local machine using the following command:
 
-git clone https://github.com/WebGeek101/FoodApp.git
+git clone [https://github.com/MrBeanKun/Food_App/tree/main]
 
 ## Running the BackEnd (FoodApp_BE)
 
-1. Open your preferred Java IDE (Eclipse or IntelliJ IDEA).
+1. In your database create a table named 'food_app' (just run the .sql file inFoodApp_BE)
 
-2. Import the FoodApp_BE project into your IDE.
+2. Open your preferred Java IDE (Eclipse or IntelliJ IDEA).
 
-3. Build and run the project within your IDE. This will start the back-end server.
+3. Import the FoodApp_BE project into your IDE.
+
+4. Go to the properties file and upidate database password.
+
+5. Build and run the project within your IDE. This will start the back-end server.
 
 ## Running the FrontEnd (FoodApp_FE)
 
@@ -40,7 +44,7 @@ git clone https://github.com/WebGeek101/FoodApp.git
     npm install
 
 4. After the installation is complete, start the front-end server using Angular CLI:
-   ng serve -o
+   ng s -o
 
    The `-o` flag opens a new browser window/tab with the app. You can also access it by navigating to `http://localhost:4200` in your web browser.
 
@@ -48,7 +52,7 @@ git clone https://github.com/WebGeek101/FoodApp.git
 
 You should now have the FoodApp up and running on your local system. You can start exploring and using the application.
 
-If you encounter any issues or have questions, please refer to the project's [Issues](https://github.com/your-username/FoodApp/issues) section on GitHub or feel free to open a new issue.
+If you encounter any issues or have questions, please refer to the project's [Issues]([https://github.com/MrBeanKun/Food_App/issues]) section on GitHub or feel free to open a new issue.
 
 Happy coding and enjoy using FoodApp!
 

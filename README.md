@@ -18,7 +18,7 @@ Before you begin, make sure you have the following software installed on your ma
 
 First, clone this repository to your local machine using the following command:
 
-git clone (https://github.com/MrBeanKun/Food_App/tree/main)
+git clone [https://github.com/MrBeanKun/Food_App/tree/main]
 
 ## Running the BackEnd (FoodApp_BE)
 
@@ -52,7 +52,7 @@ git clone (https://github.com/MrBeanKun/Food_App/tree/main)
 
 You should now have the FoodApp up and running on your local system. You can start exploring and using the application.
 
-If you encounter any issues or have questions, please refer to the project's [Issues](https://github.com/your-username/FoodApp/issues) section on GitHub or feel free to open a new issue.
+If you encounter any issues or have questions, please refer to the project's [Issues]([https://github.com/MrBeanKun/Food_App/issues]) section on GitHub or feel free to open a new issue.
 
 Happy coding and enjoy using FoodApp!
 
